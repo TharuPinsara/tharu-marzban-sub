@@ -7,7 +7,7 @@ A beautiful, modern cyber-style subscription page for **Marzban Panel**.
 
 ---
 
-![Subscription Speedtest](https://github.com/TharuPinsara/tharu-marzban-sub/raw/main/Files/Screenshot%203.png)
+![Subscription Speedtest](https://github.com/TharuPinsara/tharu-marzban-sub/raw/main/Files/Screenshot%204.png)
 
 ---
 
