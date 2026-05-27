@@ -4,11 +4,13 @@
 ![Marzban](https://img.shields.io/badge/Marzban-Subscription%20Template-1a6fff?style=for-the-badge)
 
 A beautiful, modern cyber-style subscription page for **Marzban Panel**.
----
-
-![Subscription Speedtest](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/Files/Screenshot%203.png)
 
 ---
+
+![Subscription Speedtest](https://github.com/TharuPinsara/tharu-marzban-sub/raw/main/Files/Screenshot%203.png)
+
+---
+
 ## ✨ Features
 
 - Modern neon cyberpunk design with animated background
