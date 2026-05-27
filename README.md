@@ -47,3 +47,4 @@ sudo marzban restart
 
 
 ---
+Made with ❤️ by Tharu Pinsara
