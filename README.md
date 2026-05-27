@@ -38,8 +38,8 @@ sudo marzban restart
 ```
 ## 📸 Screenshots
 
-![Subscription Page Preview]([https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/screenshots/preview.jpg](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/Files/Screenshot%201.png))
-![Subscription Speedtest]([https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/screenshots/preview.jpg](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/Files/Screenshot%202.png))
+![Tharu Paid Servers Subscription Page](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/Files/Screenshot%201.png)
+![Subscription Speedtest](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/Files/Screenshot%202.png)
 
 
 ---
