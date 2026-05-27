@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔥 Tharu Paid Server ⚡️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+  <style>
+    :root {
+      --bg-deep:    #010a18;
+      --bg:         #020d1f;
+      --bg-card:    rgba(2, 14, 35, 0.80);
+      --bg-card2:   rgba(3, 16, 40, 0.65);
+      --bg-input:   rgba(255,255,255,0.04);
+
+      --neon:       #00d4ff;
+      --neon-dim:   #0099cc;
+      --neon-glow:  rgba(0,212,255,0.20);
+      --blue:       #1a6fff;
+      --blue-dim:   #0f4fcc;
+      --blue-glow:  rgba(26,111,255,0.18);
+      --cyan:       #00f0ff;
+      --cyan-glow:  rgba(0,240,255,0.15);
+      --teal:       #00c9c9;
+
+      --grad-primary: linear-gradient(135deg, #00d4ff, #1a6fff);
+      --grad-blue:    linear-gradient(135deg, #1a6fff, #00d4ff);
+      --grad-text:    linear-gradient(135deg, #00d4ff, #60aaff);
+
+      --border:       rgba(0,212,255,0.13);
+      --border-bright:rgba(0,212,255,0.38);
+      --border-blue:  rgba(26,111,255,0.28);
+
+      --text:    #e0f4ff;
+      --text-2:  #7ab8d8;
+      --muted:   #2e5f7a;
+
+      --success: #34d399;
+      --warn:    #fbbf24;
+      --danger:  #f87171;
+
+      --radius:  18px;
+      --radius-sm: 12px;
+      --radius-xs: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-dim); border-radius: 4px; }
+
+    /* ─── ANIMATED BACKGROUND ─── */
+    #cyberCanvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── BACKGROUND BLOBS ─── */
+    .bg-blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      animation: blobDrift 20s ease-in-out infinite;
+    }
+    .blob-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,80,180,0.20) 0%, transparent 70%);
+      top: -200px; left: -200px;
+      animation-delay: 0s;
+    }
+    .blob-2 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,212,255,0.10) 0%, transparent 70%);
+      bottom: -100px; right: -150px;
+      animation-delay: -8s;
+    }
+    .blob-3 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(26,111,255,0.12) 0%, transparent 70%);
+      top: 40%; left: 50%;
+      animation-delay: -15s;
+    }
+    @keyframes blobDrift {
+      0%,100% { transform: translate(0, 0) scale(1); }
+      33%  { transform: translate(40px, -30px) scale(1.06); }
+      66%  { transform: translate(-25px, 20px) scale(0.96); }
+    }
+
+    /* ─── LAYOUT ─── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    /* ─── GLASS CARD ─── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+      padding: 28px;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      border-color: var(--border-bright);
+      box-shadow: 0 0 40px rgba(0,212,255,0.07);
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,212,255,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* top shimmer line */
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.5), rgba(26,111,255,0.4), transparent);
+      border-radius: 1px;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 26px;
+      background: rgba(1,10,24,0.88);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      backdrop-filter: blur(30px);
+      margin-bottom: 22px;
+      animation: slideDown 0.6s cubic-bezier(0.22,1,0.36,1) both;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,212,255,0.07) inset;
+    }
+
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #00d4ff 0%, #1a6fff 100%);
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(0,212,255,0.5), 0 0 40px rgba(0,212,255,0.2);
+      flex-shrink: 0;
+    }
+    .logo-icon svg { width: 24px; height: 24px; fill: #fff; }
+
+    .logo-text-wrap {}
+    .logo-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+    .logo-sub {
+      font-size: 0.62rem;
+      font-weight: 400;
+      color: white;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .header-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: rgba(52,211,153,0.08);
+      border: 1px solid rgba(52,211,153,0.22);
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--success);
+      letter-spacing: 0.06em;
+    }
+    .header-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--success);
+      animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.8)} }
+
+    /* ─── STATUS CARD ─── */
+    .status-card { animation: fadeUp 0.7s 0.1s cubic-bezier(0.22,1,0.36,1) both; }
+
+    .status-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 480px) {
+      .status-inner { grid-template-columns: 1fr; text-align: center; }
+      .status-gauge { margin: 0 auto; }
+      .stat-row { justify-content: center; }
+    }
+
+    /* ─── GAUGE ─── */
+    .gauge-wrap {
+      position: relative;
+      width: 190px;
+      height: 190px;
+      flex-shrink: 0;
+    }
+    .gauge-svg { width: 190px; height: 190px; transform: rotate(-90deg); }
+    .gauge-bg   { fill: none; stroke: rgba(255,255,255,0.04); stroke-width: 10; }
+    .gauge-track { fill: none; stroke: rgba(0,212,255,0.08); stroke-width: 7; stroke-linecap: round; }
+    .gauge-fill  { fill: none; stroke-width: 7; stroke-linecap: round;
+                   stroke-dasharray: 326; transition: stroke-dashoffset 1.4s cubic-bezier(0.22,1,0.36,1); }
+    .gauge-fill.green  { stroke: url(#gGreen);  filter: drop-shadow(0 0 8px var(--success)); }
+    .gauge-fill.yellow { stroke: url(#gYellow); filter: drop-shadow(0 0 8px var(--warn)); }
+    .gauge-fill.red    { stroke: url(#gRed);    filter: drop-shadow(0 0 8px var(--danger)); }
+
+    .gauge-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .gauge-pct {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .gauge-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Gauge glow ring */
+    .gauge-glow {
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(0,212,255,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ─── USER INFO ─── */
+    .username {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .status-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 6px currentColor;
+      animation: pulse 2s infinite;
+    }
+    .badge-active   { background: rgba(52,211,153,0.1);  color: var(--success); border: 1px solid rgba(52,211,153,0.25); }
+    .badge-limited  { background: rgba(248,113,113,0.1); color: var(--danger);  border: 1px solid rgba(248,113,113,0.25); }
+    .badge-expired  { background: rgba(251,191,36,0.1);  color: var(--warn);    border: 1px solid rgba(251,191,36,0.25); }
+    .badge-disabled { background: rgba(46,95,122,0.1);   color: var(--muted);   border: 1px solid rgba(46,95,122,0.2); }
+
+    /* ─── STAT ROWS ─── */
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      color: var(--text-2);
+      margin-bottom: 9px;
+      font-weight: 400;
+    }
+    .stat-row strong {
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .stat-row .stat-icon {
+      width: 28px; height: 28px;
+      background: rgba(0,212,255,0.09);
+      border: 1px solid rgba(0,212,255,0.16);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .stat-row .stat-icon svg { width: 13px; height: 13px; fill: var(--neon); }
+
+    /* ─── SECTION HEADING ─── */
+    .section-heading {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--neon);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,212,255,0.3), transparent);
+    }
+    .section-heading-dot {
+      width: 6px; height: 6px;
+      background: var(--grad-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--neon);
+      flex-shrink: 0;
+    }
+
+    /* ─── COPY LINK ROW ─── */
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .link-row:hover { border-color: var(--border-bright); background: rgba(0,212,255,0.04); }
+    .link-text {
+      flex: 1;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn-icon {
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: rgba(0,212,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.22s;
+      color: var(--muted);
+    }
+    .btn-icon:hover {
+      background: rgba(0,212,255,0.14);
+      border-color: var(--border-bright);
+      color: var(--neon);
+      box-shadow: 0 0 14px rgba(0,212,255,0.18);
+      transform: scale(1.05);
+    }
+    .btn-icon svg { width: 14px; height: 14px; fill: currentColor; }
+    .btn-icon.copied { background: rgba(52,211,153,0.1); border-color: rgba(52,211,153,0.3); color: var(--success); }
+
+    /* ─── OS TABS ─── */
+    .tab-group {
+      display: flex;
+      gap: 5px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 5px;
+      margin-bottom: 18px;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 9px 6px;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border-radius: 9px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.22s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .tab-btn svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(0,212,255,0.18), rgba(26,111,255,0.12));
+      color: var(--neon);
+      border-color: rgba(0,212,255,0.30);
+      box-shadow: 0 2px 16px rgba(0,212,255,0.13);
+    }
+    .tab-content { display: none; animation: fadeUp 0.3s ease both; }
+    .tab-content.active { display: block; }
+
+    /* ─── ACCORDION ─── */
+    .accordion {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 10px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      background: var(--bg-card2);
+    }
+    .accordion:hover { border-color: var(--border-bright); box-shadow: 0 4px 24px rgba(0,212,255,0.07); }
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      cursor: pointer;
+      background: transparent;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .accordion-header:hover { background: rgba(0,212,255,0.03); }
+    .accordion-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .accordion-icon {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon-android { background: rgba(52,211,153,0.12); color: var(--success); border: 1px solid rgba(52,211,153,0.2); }
+    .icon-ios     { background: rgba(0,212,255,0.12);  color: var(--neon);    border: 1px solid rgba(0,212,255,0.2); }
+    .icon-windows { background: rgba(26,111,255,0.12); color: var(--blue);    border: 1px solid rgba(26,111,255,0.2); }
+    .accordion-icon svg { width: 15px; height: 15px; fill: currentColor; }
+
+    .best-tag {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(26,111,255,0.12));
+      color: var(--neon);
+      border: 1px solid rgba(0,212,255,0.3);
+      padding: 3px 8px;
+      border-radius: 100px;
+    }
+    .chevron { width: 18px; height: 18px; color: var(--muted); transition: transform 0.25s; flex-shrink: 0; }
+    .chevron svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+    .accordion.open .chevron { transform: rotate(180deg); color: var(--neon); }
+
+    .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1); }
+    .accordion.open .accordion-body { max-height: 600px; }
+    .accordion-inner { padding: 0 18px 18px; }
+
+    /* ─── APP ACTION ─── */
+    .app-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      transition: all 0.22s;
+      cursor: pointer;
+    }
+    .app-action:hover {
+      background: rgba(0,212,255,0.06);
+      border-color: rgba(0,212,255,0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(0,212,255,0.08);
+    }
+    .app-action-left { display: flex; align-items: center; gap: 10px; }
+    .step-num {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(26,111,255,0.15));
+      color: var(--neon);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,212,255,0.25);
+    }
+    .step-badge {
+      font-size: 0.6rem;
+      background: rgba(0,212,255,0.10);
+      color: var(--neon);
+      border: 1px solid rgba(0,212,255,0.22);
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+    .arrow-icon { width: 16px; height: 16px; color: var(--muted); flex-shrink: 0; }
+    .arrow-icon svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+    /* ─── CONFIG ITEMS ─── */
+    .config-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xs);
+      margin-bottom: 8px;
+      background: rgba(255,255,255,0.02);
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .config-item:hover { border-color: var(--border-bright); background: rgba(0,212,255,0.04); }
+    .config-name {
+      flex: 1;
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-2);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .config-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+    /* ─── PRIMARY BUTTON ─── */
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(26,111,255,0.12));
+      border: 1px solid rgba(0,212,255,0.30);
+      color: var(--neon);
+      font-family: 'Sora', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-bottom: 10px;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, rgba(0,212,255,0.26), rgba(26,111,255,0.20));
+      border-color: rgba(0,212,255,0.52);
+      box-shadow: 0 0 28px rgba(0,212,255,0.18), 0 4px 20px rgba(0,0,0,0.3);
+      transform: translateY(-1px);
+    }
+    .btn-primary svg { width: 15px; height: 15px; fill: currentColor; }
+    .btn-primary.success-flash {
+      background: rgba(52,211,153,0.1);
+      border-color: rgba(52,211,153,0.3);
+      color: var(--success);
+      box-shadow: 0 0 20px rgba(52,211,153,0.12);
+    }
+
+    /* ─── QR BTN ─── */
+    .btn-qr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: var(--radius-xs);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      font-family: 'Sora', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.22s;
+    }
+    .btn-qr:hover { border-color: var(--border-bright); color: var(--neon); background: rgba(0,212,255,0.05); }
+    .btn-qr svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* ─── TELEGRAM BUTTON ─── */
+    .tg-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, #0a3a6e, #0d5199, #00a8d4);
+      border: 1px solid rgba(0,212,255,0.35);
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 24px rgba(0,100,200,0.35), 0 0 0 1px rgba(0,212,255,0.15) inset;
+    }
+    .tg-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(0,130,220,0.45), 0 0 20px rgba(0,212,255,0.25), 0 0 0 1px rgba(0,212,255,0.3) inset;
+      border-color: rgba(0,212,255,0.55);
+    }
+    .tg-btn svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+
+    /* ─── BOTTOM ROW ─── */
+    .bottom-row { display: flex; align-items: center; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(1,8,20,0.90);
+      backdrop-filter: blur(16px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: rgba(2,12,30,0.96);
+      border: 1px solid var(--border-bright);
+      border-radius: 24px;
+      padding: 32px;
+      width: 100%;
+      max-width: 360px;
+      transform: translateY(20px) scale(0.96);
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1);
+      box-shadow: 0 0 60px rgba(0,212,255,0.18), 0 20px 60px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+    .modal-box::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon), var(--blue), transparent);
+    }
+    .modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+    .modal-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+    .modal-qr-wrap {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 0 30px rgba(0,212,255,0.14);
+    }
+    .modal-qr-wrap > div { display: flex !important; align-items: center; justify-content: center; }
+    .modal-hint { text-align: center; font-size: 0.7rem; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+    .modal-close {
+      position: absolute;
+      top: 18px; right: 18px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+    .modal-close:hover { background: rgba(248,113,113,0.1); border-color: rgba(248,113,113,0.3); color: var(--danger); }
+
+    /* ─── INFO NOTE ─── */
+    .info-note {
+      font-size: 0.74rem;
+      color: var(--text-2);
+      padding: 12px 16px;
+      background: rgba(0,212,255,0.04);
+      border: 1px solid rgba(0,212,255,0.10);
+      border-left: 2px solid rgba(0,212,255,0.40);
+      border-radius: var(--radius-xs);
+      margin-bottom: 14px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* ─── EMPTY NOTE ─── */
+    .empty-note {
+      text-align: center;
+      padding: 24px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider { height: 1px; background: var(--border); margin: 22px 0; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes slideDown { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
+
+    .card:nth-child(2) { animation: fadeUp 0.6s 0.15s cubic-bezier(0.22,1,0.36,1) both; }
+    .card:nth-child(3) { animation: fadeUp 0.6s 0.22s cubic-bezier(0.22,1,0.36,1) both; }
+    .card:nth-child(4) { animation: fadeUp 0.6s 0.29s cubic-bezier(0.22,1,0.36,1) both; }
+    .card:nth-child(5) { animation: fadeUp 0.6s 0.36s cubic-bezier(0.22,1,0.36,1) both; }
+    .card:nth-child(6) { animation: fadeUp 0.6s 0.43s cubic-bezier(0.22,1,0.36,1) both; }
+
+    /* ─── TOOLTIP ─── */
+    [data-tip] { position: relative; }
+    [data-tip]:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%; transform: translateX(-50%);
+      background: rgba(2,12,30,0.96);
+      border: 1px solid var(--border-bright);
+      color: var(--neon);
+      font-size: 0.62rem;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding: 5px 10px;
+      border-radius: 8px;
+      pointer-events: none;
+      z-index: 99;
+      box-shadow: 0 4px 16px rgba(0,212,255,0.13);
+    }
+
+    /* ─── NETWORK DECO ─── */
+    .network-deco {
+      position: absolute;
+      top: 18px; right: 20px;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+    .network-deco svg { width: 64px; height: 64px; }
+
+    /* ─── SUB URL ROW ─── */
+    .sub-url-row { display: flex; gap: 8px; }
+    .sub-url-row .link-row { flex: 1; margin: 0; }
+
+    /* ─── FOOTER ─── */
+    .footer-card {
+      background: transparent;
+      border: none;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.685);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.08em;
+    }
+    .footer-card::after { display: none; }
+    .footer-card::before { display: none; }
+
+    /* ─── GLOW BADGE DECORATION ─── */
+    .card-glow {
+      position: absolute;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(0,212,255,0.10), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      top: -60px; right: -60px;
+      filter: blur(20px);
+    }
+
+    @media (max-width: 360px) {
+      .tab-btn span { display: none; }
+    }
+
+    /* ─── HERO ACCENT LINE ─── */
+.accent-line {
+  height: 2px;
+  background: var(--grad-primary);
+  border-radius: 2px;
+  margin-bottom: 22px;
+  opacity: 0.6;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  </style>
+</head>
+<body>
+
+  <!-- SVG Gradient Defs for gauge -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"   stop-color="#34d399"/>
+        <stop offset="100%" stop-color="#2dd4bf"/>
+      </linearGradient>
+      <linearGradient id="gYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"   stop-color="#fbbf24"/>
+        <stop offset="100%" stop-color="#f97316"/>
+      </linearGradient>
+      <linearGradient id="gRed" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%"   stop-color="#f87171"/>
+        <stop offset="100%" stop-color="#ec4899"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <canvas id="cyberCanvas"></canvas>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <!-- QR Modal -->
+  <div class="modal-overlay" id="QrModal" onclick="closeModalOutside(event)">
+    <div class="modal-box" style="position:relative;">
+      <div class="modal-close" onclick="closeModal()">✕</div>
+      <div class="modal-title" id="modalTitle">Config QR Code</div>
+      <div class="modal-qr-wrap">
+        <div id="qrcode"></div>
+      </div>
+      <p class="modal-hint">tap outside to close</p>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ─── HEADER ─── -->
+    <header class="header">
+      <div class="logo-mark">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4.18l6 2.67V11c0 3.95-2.71 7.66-6 8.93-3.29-1.27-6-4.98-6-8.93V7.85l6-2.67z"/></svg>
+        </div>
+        <div class="logo-text-wrap">
+          <div class="logo-name">Tharu PAID SERVERS</div>
+          <div class="logo-sub">SINCE 2020</div>
+        </div>
+      </div>
+      <div class="header-badge">ONLINE</div>
+    </header>
+
+    <!-- ─── STATUS CARD ─── -->
+    <div class="card status-card">
+      <div class="card-glow"></div>
+      <div class="network-deco">
+        <svg viewBox="0 0 60 60" fill="none">
+          <circle cx="10" cy="30" r="4" stroke="#00d4ff" stroke-width="1.5"/>
+          <circle cx="30" cy="10" r="4" stroke="#1a6fff" stroke-width="1.5"/>
+          <circle cx="50" cy="30" r="4" stroke="#00d4ff" stroke-width="1.5"/>
+          <circle cx="30" cy="50" r="4" stroke="#1a6fff" stroke-width="1.5"/>
+          <circle cx="30" cy="30" r="5" stroke="#00f0ff" stroke-width="1.5"/>
+          <line x1="14" y1="30" x2="25" y2="30" stroke="#00d4ff" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="30" y1="14" x2="30" y2="25" stroke="#1a6fff" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="35" y1="30" x2="46" y2="30" stroke="#00d4ff" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="30" y1="35" x2="30" y2="46" stroke="#1a6fff" stroke-width="1" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+
+      <div class="status-inner">
+        <!-- Gauge -->
+        <div class="gauge-wrap status-gauge">
+          <div class="gauge-glow"></div>
+          <svg class="gauge-svg" viewBox="0 0 120 120">
+            <circle class="gauge-bg" cx="60" cy="60" r="52"/>
+            <circle class="gauge-track" cx="60" cy="60" r="52"/>
+            <circle class="gauge-fill" id="gaugeFill" cx="60" cy="60" r="52" stroke-dashoffset="326"/>
+          </svg>
+          <div class="gauge-text">
+            <span class="gauge-pct" id="gaugeText">0%</span>
+            <span class="gauge-label">Data Used</span>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <div class="accent-line"></div>
+          <div class="username">{{ user.username }}</div>
+          <div class="status-badge" id="statusBadge">Loading…</div>
+
+          <div class="stat-row">
+            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></div>
+            <span>Quota:</span>
+            <strong>{{ user.used_traffic | bytesformat }} / {% if not user.data_limit %}∞{% else %}{{ user.data_limit | bytesformat }}{% endif %}</strong>
+          </div>
+          <div class="stat-row">
+            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+            <span>Expires:</span>
+            <strong id="expireDisplay">{% if not user.expire %}∞{% else %}{{ user.expire | datetime }}{% endif %}</strong>
+          </div>
+          <div class="stat-row" id="daysLeftRow">
+            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg></div>
+            <span>Days Left:</span>
+            <strong id="daysLeftDisplay" style="color:var(--neon);">—</strong>
+          </div>
+          <div class="stat-row" id="resetIntervalRow">
+            <div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg></div>
+            <span id="resetIntervalText"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── HOW TO CONNECT ─── -->
+    <div class="card">
+      <div class="section-heading"><div class="section-heading-dot"></div> How To Connect</div>
+      <p style="font-size:0.8rem;color:var(--text-2);margin-bottom:18px;font-weight:400;line-height:1.6;">Choose your operating system below to get started with your secure subscription.</p>
+
+      <!-- OS Tabs -->
+      <div class="tab-group">
+        <button class="tab-btn" id="tab-android" onclick="switchTab('android')">
+          <svg viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C3.6533 10.1426 2.1514 12.0471 2 14.5045h20c-.1514-2.4574-1.6533-4.3619-4.1185-5.1631"/></svg>
+          <span>Android</span>
+        </button>
+        <button class="tab-btn" id="tab-ios" onclick="switchTab('ios')">
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span>iOS / Mac</span>
+        </button>
+        <button class="tab-btn" id="tab-windows" onclick="switchTab('windows')">
+          <svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+          <span>Windows</span>
+        </button>
+      </div>
+
+      <!-- Android Tab -->
+      <div class="tab-content" id="content-android">
+        <div class="info-note">Choose your preferred Android VPN app below. Download, then use the quick-add link to import your subscription.</div>
+
+        <div class="accordion" id="acc-netmod-android">
+          <div class="accordion-header" onclick="toggleAccordion('acc-netmod-android')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-android"><svg viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C3.6533 10.1426 2.1514 12.0471 2 14.5045h20c-.1514-2.4574-1.6533-4.3619-4.1185-5.1631"/></svg></div>
+              <span>Netmod VPN Client</span><span class="best-tag">★ Best</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://play.google.com/store/apps/details?id=com.netmod.syna&pcampaignid=web_share" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Download from Play Store</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <a href="#" id="android-v2rayng" class="app-action" style="display:none;"></a>
+              <div class="info-note" style="margin-top:8px;margin-bottom:0;">After installing, manually add your subscription URL.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="acc-v2rayng">
+          <div class="accordion-header" onclick="toggleAccordion('acc-v2rayng')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-android"><svg viewBox="0 0 24 24"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C3.6533 10.1426 2.1514 12.0471 2 14.5045h20c-.1514-2.4574-1.6533-4.3619-4.1185-5.1631"/></svg></div>
+              <span>v2rayNG</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://play.google.com/store/apps/details?id=com.v2ray.ang" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Download v2rayNG</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <a href="#" id="android-v2rayng-quick" class="app-action">
+                <div class="app-action-left"><span class="step-num">2</span> Add to App <span class="step-badge">Quick Install</span></div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- iOS Tab -->
+      <div class="tab-content" id="content-ios">
+        <div id="iOSVer"></div>
+        <div class="info-note">Choose your preferred iOS VPN app. Install from the App Store, then import your subscription via quick-add.</div>
+
+        <div class="accordion" id="acc-npvtunnel">
+          <div class="accordion-header" onclick="toggleAccordion('acc-npvtunnel')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-ios"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+              <span>Npv Tunnel</span><span class="best-tag">★ Best</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://apps.apple.com/us/app/npv-tunnel/id1629465476" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Download from App Store</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <div class="info-note" style="margin-top:8px;margin-bottom:0;">After installing, manually add your subscription URL.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="acc-v2box">
+          <div class="accordion-header" onclick="toggleAccordion('acc-v2box')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-ios"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+              <span>v2Box</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://apps.apple.com/us/app/v2box-v2ray-client/id6446814690" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Download from App Store</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <a href="#" id="ios-v2box" class="app-action">
+                <div class="app-action-left"><span class="step-num">2</span> Add to App <span class="step-badge">Quick Install</span></div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="acc-shadowrocket">
+          <div class="accordion-header" onclick="toggleAccordion('acc-shadowrocket')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-ios"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+              <span>Shadowrocket</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://apps.apple.com/us/app/shadowrocket/id932747118" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Purchase from App Store</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <a href="#" id="ios-shadowrocket" class="app-action" onclick="openShadowrocketURL(); return false;">
+                <div class="app-action-left"><span class="step-num">2</span> Add to App <span class="step-badge">Quick Install</span></div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:0.7rem;color:var(--muted);margin-top:12px;">Note: macOS setup is identical to iOS.</p>
+      </div>
+
+      <!-- Windows Tab -->
+      <div class="tab-content" id="content-windows">
+        <div class="info-note">Choose your preferred Windows VPN client. Download the app, then use the quick-add link to import your subscription automatically.</div>
+
+        <div class="accordion" id="acc-netmod-windows">
+          <div class="accordion-header" onclick="toggleAccordion('acc-netmod-windows')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-windows"><svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg></div>
+              <span>Netmod Client</span><span class="best-tag">★ Best</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://sourceforge.net/projects/netmodhttp/" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Download Netmod Client</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <div class="info-note" style="margin-top:8px;margin-bottom:0;">After installing, manually add your subscription URL in the app settings.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="acc-v2rayn">
+          <div class="accordion-header" onclick="toggleAccordion('acc-v2rayn')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-windows"><svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg></div>
+              <span>v2rayN</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://github.com/2dust/v2rayN/releases" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Download v2rayN</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <a href="#" id="windows-v2rayn" class="app-action">
+                <div class="app-action-left"><span class="step-num">2</span> Add Subscription <span class="step-badge">Quick Install</span></div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="acc-nekoray">
+          <div class="accordion-header" onclick="toggleAccordion('acc-nekoray')">
+            <div class="accordion-header-left">
+              <div class="accordion-icon icon-windows"><svg viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg></div>
+              <span>Nekoray</span>
+            </div>
+            <div class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+          </div>
+          <div class="accordion-body">
+            <div class="accordion-inner">
+              <a href="https://github.com/MatsuriDayo/nekoray/releases" class="app-action" target="_blank">
+                <div class="app-action-left"><span class="step-num">1</span> Download Nekoray</div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+              <a href="#" id="windows-nekoray" class="app-action">
+                <div class="app-action-left"><span class="step-num">2</span> Add Subscription <span class="step-badge">Quick Install</span></div>
+                <div class="arrow-icon"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── GENERAL ACCESS ─── -->
+    <div class="card">
+      <div class="section-heading"><div class="section-heading-dot"></div> General Access</div>
+      <p style="font-size:0.8rem;color:var(--text-2);margin-bottom:18px;font-weight:400;line-height:1.6;">Your individual config nodes. Copy or scan each one via QR code.</p>
+
+      <button class="btn-primary" id="copyAllBtn" onclick="copyAllConfigs(this)">
+        <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <span id="copyAllText">Copy All Configs</span>
+      </button>
+
+      <div id="configs_section"></div>
+    </div>
+
+    <!-- ─── SPEED TEST ─── -->
+    <div class="card" id="speedTestCard">
+      <div class="section-heading"><div class="section-heading-dot"></div> Speed Test</div>
+      <p style="font-size:0.8rem;color:var(--text-2);margin-bottom:20px;font-weight:400;line-height:1.6;">Test your current internet connection speed directly from your browser.</p>
+
+      <!-- Arc Meters Row -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:18px;">
+
+        <!-- PING meter -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 8px 10px;text-align:center;">
+          <div style="font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">PING</div>
+          <div style="position:relative;width:90px;height:54px;margin:0 auto 6px;">
+            <svg viewBox="0 0 100 60" width="90" height="54">
+              <defs>
+                <linearGradient id="pingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00d4ff"/>
+                  <stop offset="100%" stop-color="#1a6fff"/>
+                </linearGradient>
+              </defs>
+              <!-- track -->
+              <path d="M10,55 A45,45 0 0,1 90,55" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round"/>
+              <!-- arc fill -->
+              <path id="pingArc" d="M10,55 A45,45 0 0,1 90,55" fill="none" stroke="url(#pingGrad)" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="141.4" stroke-dashoffset="141.4" style="transition:stroke-dashoffset 0.6s cubic-bezier(0.22,1,0.36,1);filter:drop-shadow(0 0 5px rgba(0,212,255,0.6))"/>
+              <!-- tick marks -->
+              <g stroke="rgba(255,255,255,0.12)" stroke-width="1">
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-90,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-67.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-45,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-22.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(0,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(22.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(45,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(67.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(90,50,55)"/>
+              </g>
+            </svg>
+            <!-- needle -->
+            <div id="pingNeedle" style="position:absolute;bottom:0;left:50%;width:2px;height:44px;background:linear-gradient(to top,rgba(0,212,255,0.9),transparent);border-radius:2px;transform-origin:bottom center;transform:translateX(-50%) rotate(-90deg);transition:transform 0.6s cubic-bezier(0.22,1,0.36,1);"></div>
+          </div>
+          <div id="pingVal" style="font-size:1.25rem;font-weight:800;color:var(--neon);font-family:'JetBrains Mono',monospace;line-height:1;">—</div>
+          <div style="font-size:0.58rem;color:var(--muted);margin-top:3px;">ms</div>
+        </div>
+
+        <!-- DOWNLOAD meter -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 8px 10px;text-align:center;">
+          <div style="font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">DOWNLOAD</div>
+          <div style="position:relative;width:90px;height:54px;margin:0 auto 6px;">
+            <svg viewBox="0 0 100 60" width="90" height="54">
+              <defs>
+                <linearGradient id="dlGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#34d399"/>
+                  <stop offset="100%" stop-color="#2dd4bf"/>
+                </linearGradient>
+              </defs>
+              <path d="M10,55 A45,45 0 0,1 90,55" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round"/>
+              <path id="dlArc" d="M10,55 A45,45 0 0,1 90,55" fill="none" stroke="url(#dlGrad)" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="141.4" stroke-dashoffset="141.4" style="transition:stroke-dashoffset 0.4s ease;filter:drop-shadow(0 0 5px rgba(52,211,153,0.6))"/>
+              <g stroke="rgba(255,255,255,0.12)" stroke-width="1">
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-90,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-67.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-45,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-22.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(0,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(22.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(45,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(67.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(90,50,55)"/>
+              </g>
+            </svg>
+            <div id="dlNeedle" style="position:absolute;bottom:0;left:50%;width:2px;height:44px;background:linear-gradient(to top,rgba(52,211,153,0.9),transparent);border-radius:2px;transform-origin:bottom center;transform:translateX(-50%) rotate(-90deg);transition:transform 0.4s ease;"></div>
+          </div>
+          <div id="dlVal" style="font-size:1.25rem;font-weight:800;color:var(--success);font-family:'JetBrains Mono',monospace;line-height:1;">—</div>
+          <div style="font-size:0.58rem;color:var(--muted);margin-top:3px;">Mbps</div>
+        </div>
+
+        <!-- UPLOAD meter -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 8px 10px;text-align:center;">
+          <div style="font-size:0.55rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">UPLOAD</div>
+          <div style="position:relative;width:90px;height:54px;margin:0 auto 6px;">
+            <svg viewBox="0 0 100 60" width="90" height="54">
+              <defs>
+                <linearGradient id="ulGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#fbbf24"/>
+                  <stop offset="100%" stop-color="#f97316"/>
+                </linearGradient>
+              </defs>
+              <path d="M10,55 A45,45 0 0,1 90,55" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round"/>
+              <path id="ulArc" d="M10,55 A45,45 0 0,1 90,55" fill="none" stroke="url(#ulGrad)" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="141.4" stroke-dashoffset="141.4" style="transition:stroke-dashoffset 0.4s ease;filter:drop-shadow(0 0 5px rgba(251,191,36,0.6))"/>
+              <g stroke="rgba(255,255,255,0.12)" stroke-width="1">
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-90,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-67.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-45,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(-22.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(0,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(22.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(45,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(67.5,50,55)"/>
+                <line x1="10" y1="55" x2="13" y2="55" transform="rotate(90,50,55)"/>
+              </g>
+            </svg>
+            <div id="ulNeedle" style="position:absolute;bottom:0;left:50%;width:2px;height:44px;background:linear-gradient(to top,rgba(251,191,36,0.9),transparent);border-radius:2px;transform-origin:bottom center;transform:translateX(-50%) rotate(-90deg);transition:transform 0.4s ease;"></div>
+          </div>
+          <div id="ulVal" style="font-size:1.25rem;font-weight:800;color:var(--warn);font-family:'JetBrains Mono',monospace;line-height:1;">—</div>
+          <div style="font-size:0.58rem;color:var(--muted);margin-top:3px;">Mbps</div>
+        </div>
+
+      </div>
+
+      <!-- Progress Bar -->
+      <div id="speedProgressWrap" style="display:none;margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span id="speedStatusText" style="font-size:0.72rem;font-family:'JetBrains Mono',monospace;color:var(--neon);">Testing…</span>
+          <span id="speedPct" style="font-size:0.72rem;font-family:'JetBrains Mono',monospace;color:var(--muted);">0%</span>
+        </div>
+        <div style="height:4px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;">
+          <div id="speedProgressBar" style="height:100%;width:0%;background:var(--grad-primary);border-radius:4px;transition:width 0.3s ease;"></div>
+        </div>
+      </div>
+
+      <!-- Run Button -->
+      <button class="btn-primary" id="speedTestBtn" onclick="runSpeedTest()">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        <span id="speedBtnText">Run Speed Test</span>
+      </button>
+    </div>
+
+    <!-- ─── SUPPORT ─── -->
+    <div class="card">
+      <div class="section-heading"><div class="section-heading-dot"></div> Telegram Support</div>
+      <p style="font-size:0.8rem;color:var(--text-2);margin-bottom:18px;font-weight:400;line-height:1.6;">Having issues with your subscription? Reach out to us directly on Telegram.</p>
+      <a href="https://t.me/z_z_z_zz_z" class="tg-btn" target="_blank">
+        <svg viewBox="0 0 50 50"><path d="M25,2c12.703,0,23,10.297,23,23S37.703,48,25,48S2,37.703,2,25S12.297,2,25,2z M32.934,34.375c0.423-1.298,2.405-14.234,2.65-16.783c0.074-0.772-0.17-1.285-0.648-1.514c-0.578-0.278-1.434-0.139-2.427,0.219c-1.362,0.491-18.774,7.884-19.78,8.312c-0.954,0.405-1.856,0.847-1.856,1.487c0,0.45,0.267,0.703,1.003,0.966c0.766,0.273,2.695,0.858,3.834,1.172c1.097,0.303,2.346,0.04,3.046-0.395c0.742-0.461,9.305-6.191,9.92-6.693c0.614-0.502,1.104,0.141,0.602,0.644c-0.502,0.502-6.38,6.207-7.155,6.997c-0.941,0.959-0.273,1.953,0.358,2.351c0.721,0.454,5.906,3.932,6.687,4.49c0.781,0.558,1.573,0.811,2.298,0.811C32.191,36.439,32.573,35.484,32.934,34.375z"/></svg>
+        Contact Support
+      </a>
+    </div>
+
+    <div class="card">
+    <p style="background: transparent;text-align: center;font-size: 0.68rem;color: rgba(255, 255, 255, 0.685);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.08em;">©2026&nbsp;&nbsp;·&nbsp;&nbsp;Tharu Paid Servers&nbsp;&nbsp;<br>All rights reserved</p>
+    </div>
+
+  </div><!-- end .page -->
+
+  <script>
+    // ─── CORE VARIABLES ───────────────────────────────────────────────────────
+    const sub = "{{ user.subscription_url }}";
+    let fullUrl = `${window.location.origin}{{ user.subscription_url }}`;
+    if (sub.startsWith("http")) { fullUrl = sub; }
+
+    const dataLimit = "{% if not user.data_limit %}∞{% else %}{{ user.data_limit }}{% endif %}";
+    const dataUsed  = "{{ user.used_traffic }}";
+    const expireDateInit = "{% if not user.expire %}∞{% else %}{{ user.expire | datetime }}{% endif %}";
+    const resetInterval  = "{{ user.data_limit_reset_strategy.value }}";
+    const userStatus     = "{{ user.status.value }}";
+
+    // ─── GAUGE INIT ──────────────────────────────────────────────────────────
+    function calculatePercentage(used, limit) {
+      if (limit === '∞') return 100;
+      const p = parseFloat(used) / parseFloat(limit) * 100;
+      return Math.min(isNaN(p) ? 0 : p, 100);
+    }
+
+    const dataUsage = calculatePercentage(dataUsed, dataLimit);
+    const circumference = 2 * Math.PI * 52;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Gauge
+      const fill = document.getElementById('gaugeFill');
+      const txt  = document.getElementById('gaugeText');
+      const offset = circumference - (dataUsage / 100) * circumference;
+      fill.style.strokeDasharray  = circumference;
+      fill.style.strokeDashoffset = circumference;
+      setTimeout(() => { fill.style.strokeDashoffset = offset; }, 80);
+
+      if (dataUsage < 40) { fill.classList.add('green'); txt.style.color = 'var(--success)'; }
+      else if (dataUsage < 80) { fill.classList.add('yellow'); txt.style.color = 'var(--warn)'; }
+      else { fill.classList.add('red'); txt.style.color = 'var(--danger)'; }
+
+      const displayPct = dataLimit === '∞' ? '∞' : dataUsage.toFixed(1) + '%';
+      txt.textContent = displayPct;
+
+      // Status badge
+      const badge = document.getElementById('statusBadge');
+      const statusMap = { active: ['Active', 'badge-active'], limited: ['Limited', 'badge-limited'], expired: ['Expired', 'badge-expired'], disabled: ['Disabled', 'badge-disabled'] };
+      const [label, cls] = statusMap[userStatus] || ['Unknown', 'badge-disabled'];
+      badge.textContent = label;
+      badge.className = 'status-badge ' + cls;
+
+      // Expire display
+      const rawExpire = expireDateInit;
+      if (rawExpire.includes('∞')) {
+        document.getElementById('expireDisplay').textContent = '∞';
+        document.getElementById('daysLeftDisplay').textContent = '∞';
+        document.getElementById('daysLeftRow').style.display = 'flex';
+      } else {
+        const expireParts = rawExpire.match(/(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})/);
+        let correctedExpire = rawExpire;
+        let daysLeft = '—';
+        if (expireParts) {
+          const expireDate = new Date(
+            parseInt(expireParts[1]),
+            parseInt(expireParts[2]) - 1,
+            parseInt(expireParts[3]),
+            parseInt(expireParts[4]) + 5,
+            parseInt(expireParts[5]) + 30
+          );
+          const pad = n => String(n).padStart(2,'0');
+          correctedExpire = `${expireDate.getFullYear()}-${pad(expireDate.getMonth()+1)}-${pad(expireDate.getDate())} ${pad(expireDate.getHours())}:${pad(expireDate.getMinutes())}`;
+          const now = new Date();
+          const diffMs = expireDate - now;
+          if (diffMs > 0) {
+            daysLeft = Math.ceil((diffMs / (1000 * 60 * 60 * 24)) - 1) + ' days';
+          } else {
+            daysLeft = 'Expired';
+          }
+        }
+        document.getElementById('expireDisplay').textContent = correctedExpire;
+        document.getElementById('daysLeftDisplay').textContent = daysLeft;
+        const dlEl = document.getElementById('daysLeftDisplay');
+        const dlNum = parseInt(daysLeft);
+        if (!isNaN(dlNum)) {
+          if (dlNum <= 3) dlEl.style.color = 'var(--danger)';
+          else if (dlNum <= 7) dlEl.style.color = 'var(--warn)';
+          else dlEl.style.color = 'var(--success)';
+        }
+      }
+
+      const resetMap = { day: 'Resets Every Day', week: 'Resets Every Week', month: 'Resets Every Month', year: 'Resets Every Year' };
+      const resetText = resetMap[resetInterval];
+      if (resetText) { document.getElementById('resetIntervalText').textContent = resetText; }
+      else { document.getElementById('resetIntervalRow').style.display = 'none'; }
+
+      const subUrlEl = document.getElementById('subUrlDisplay');
+      if (subUrlEl) subUrlEl.textContent = fullUrl;
+
+      setHrefs();
+      renderConfigs();
+
+      const iosVer = iOSversion();
+      if (iosVer) {
+        document.getElementById('iOSVer').innerHTML = `<div class="stat-row" style="margin-bottom:12px;">
+          <div class="stat-icon"><svg style="width:13px;height:13px;fill:currentColor;" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+          <span>Your iOS Version:</span> <strong>${iosVer}</strong>
+        </div>`;
+      }
+
+      const os = detectOS();
+      if (os === 'Android') switchTab('android');
+      else if (os === 'iOS') switchTab('ios');
+      else if (os === 'Windows') switchTab('windows');
+      else switchTab('android');
+    });
+
+    // ─── DEEP LINKS ──────────────────────────────────────────────────────────
+    function setHrefs() {
+      document.getElementById("ios-v2box").href              = `v2box://install-sub?url=${fullUrl}&name=Sub`;
+      document.getElementById("android-v2rayng-quick").href  = `v2rayng://install-config?url=${fullUrl}`;
+      document.getElementById("windows-v2rayn").href         = `v2rayn://install-config?url=${fullUrl}`;
+      document.getElementById("windows-nekoray").href        = `nekoray://import?url=${fullUrl}`;
+    }
+
+    // ─── COPY FUNCTIONS ──────────────────────────────────────────────────────
+    function copyToClipboard(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta);
+    }
+
+    function copySubLink(btn) {
+      copyToClipboard(fullUrl);
+      btn.classList.add('copied');
+      btn.innerHTML = `<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`;
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = `<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
+      }, 2000);
+    }
+
+    function copyAllConfigs(btn) {
+      const subLinks = "{{ user.links }}";
+      const cleaned = subLinks.replace(/[\[\]']/g, '');
+      const configs = cleaned.split(', ').join('\n');
+      copyToClipboard(configs);
+      btn.classList.add('success-flash');
+      document.getElementById('copyAllText').textContent = 'Copied!';
+      setTimeout(() => {
+        btn.classList.remove('success-flash');
+        document.getElementById('copyAllText').textContent = 'Copy All Configs';
+      }, 3000);
+    }
+
+    // ─── RENDER CONFIGS ──────────────────────────────────────────────────────
+    function extractNameFromConfigURL(url) {
+      const namePattern = /#([^#]*)/;
+      const match = url.match(namePattern);
+      if (match) return decodeURIComponent(match[1]);
+      if (url.startsWith("vmess://")) {
+        try { return JSON.parse(atob(url.replace("vmess://", ""))).ps; } catch(e) {}
+      }
+      return url.substring(0, 30) + '…';
+    }
+
+    function renderConfigs() {
+      const subLinks = "{{ user.links }}";
+      const container = document.getElementById('configs_section');
+      const cleaned = subLinks.replace(/[\[\]']/g, '');
+      const cfgArr = cleaned.split(', ').filter(c => c.trim());
+
+      if (!cfgArr.length || (cfgArr.length === 1 && !cfgArr[0])) {
+        container.innerHTML = '<div class="empty-note">No individual configs available.</div>';
+        return;
+      }
+
+      cfgArr.forEach((cfg, i) => {
+        const name = extractNameFromConfigURL(cfg) || `Config ${i+1}`;
+        const div = document.createElement('div');
+        div.className = 'config-item';
+        div.innerHTML = `
+          <span class="config-name" title="${name}">${name}</span>
+          <div class="config-actions">
+            <button class="btn-icon" data-tip="Copy" onclick="copyConfigItem(this, '${cfg.replace(/'/g,"\\'")}')">
+              <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            </button>
+            <button class="btn-icon" data-tip="QR Code" onclick="openDynamicModal('${name.replace(/'/g,"\\'")}', '${cfg.replace(/'/g,"\\'")}')">
+              <svg viewBox="0 0 24 24"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm8.75-2H13v2h1.25v-2zm1.25 0h-1v2h1v-2zm1.5 3H13v2h1.5v-2zm0 3H13v2h1.5v-2zm1.5-3h-1v2h1v-2zm1.5 0h-1v2h1v-2zm0 3h-1v2h1v-2zm-3 0h-1v2h1v-2z"/></svg>
+            </button>
+          </div>`;
+        container.appendChild(div);
+      });
+    }
+
+    function copyConfigItem(btn, cfg) {
+      copyToClipboard(cfg);
+      const orig = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = `<svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`;
+      setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 2000);
+    }
+
+    // ─── QR MODAL ────────────────────────────────────────────────────────────
+    function openDynamicModal(title, url) {
+      const modal = document.getElementById('QrModal');
+      const qrDiv = document.getElementById('qrcode');
+      const qrSize = Math.min(window.innerWidth - 100, 260);
+      qrDiv.innerHTML = '';
+      new QRCode(qrDiv, { text: url, colorDark: '#000', colorLight: '#fff', width: qrSize, height: qrSize, correctLevel: QRCode.CorrectLevel.L });
+      document.getElementById('modalTitle').textContent = title;
+      modal.classList.add('open');
+    }
+
+    function closeModal() { document.getElementById('QrModal').classList.remove('open'); }
+    function closeModalOutside(e) { if (e.target.id === 'QrModal') closeModal(); }
+
+    // ─── HELPERS ─────────────────────────────────────────────────────────────
+    function iOSversion() {
+      if (/iP(hone|od|ad)/.test(navigator.platform)) {
+        var v = navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/);
+        return v ? `${parseInt(v[1])}.${parseInt(v[2])}.${parseInt(v[3]||0)}` : null;
+      }
+      return null;
+    }
+
+    function detectOS() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (/iphone|ipad/.test(ua)) return 'iOS';
+      if (/android/.test(ua)) return 'Android';
+      if (/win/.test(ua)) return 'Windows';
+      if (/mac/.test(ua) && !/iphone|ipad/.test(ua)) return 'iOS';
+      return 'Android';
+    }
+
+    function openFoXrayURL() {
+      window.location.href = 'foxray://yiguo.dev/sub/add/?url=' + btoa(window.location.href) + '#name';
+    }
+
+    function openShadowrocketURL() {
+      window.location.href = 'sub://' + btoa(window.location.href);
+    }
+
+    // ─── TABS ────────────────────────────────────────────────────────────────
+    function switchTab(name) {
+      ['android','ios','windows'].forEach(t => {
+        document.getElementById('tab-' + t).classList.remove('active');
+        document.getElementById('content-' + t).classList.remove('active');
+      });
+      document.getElementById('tab-' + name).classList.add('active');
+      document.getElementById('content-' + name).classList.add('active');
+    }
+
+    // ─── ACCORDIONS ──────────────────────────────────────────────────────────
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('open');
+    }
+  </script>
+
+  <script>
+  // ─── SPEED TEST ──────────────────────────────────────────────────────────
+
+  // Arc helper: pct 0-100, arcLength=141.4 (half-circle path length)
+  function setArc(arcId, needleId, pct, maxMbps) {
+    const arcLen = 141.4;
+    const clipped = Math.min(pct, 100);
+    const offset = arcLen - (clipped / 100) * arcLen;
+    document.getElementById(arcId).style.strokeDashoffset = offset;
+    // needle: -90deg = 0%, 0deg = 50%, 90deg = 100%
+    const deg = -90 + (clipped / 100) * 180;
+    document.getElementById(needleId).style.transform = `translateX(-50%) rotate(${deg}deg)`;
+  }
+
+  function setPingArc(ms) {
+    // 0ms=0%, 300ms=100% (log scale feels better for ping)
+    const pct = Math.min((ms / 300) * 100, 100);
+    setArc('pingArc', 'pingNeedle', pct, 300);
+  }
+
+  function setDlArc(mbps) {
+    // 0-200 Mbps scale
+    const pct = Math.min((mbps / 200) * 100, 100);
+    setArc('dlArc', 'dlNeedle', pct, 200);
+  }
+
+  function setUlArc(mbps) {
+    // 0-100 Mbps scale
+    const pct = Math.min((mbps / 100) * 100, 100);
+    setArc('ulArc', 'ulNeedle', pct, 100);
+  }
+
+  async function runSpeedTest() {
+    const btn      = document.getElementById('speedTestBtn');
+    const btnText  = document.getElementById('speedBtnText');
+    const pingEl   = document.getElementById('pingVal');
+    const dlEl     = document.getElementById('dlVal');
+    const ulEl     = document.getElementById('ulVal');
+    const progWrap = document.getElementById('speedProgressWrap');
+    const progBar  = document.getElementById('speedProgressBar');
+    const progPct  = document.getElementById('speedPct');
+    const statusTx = document.getElementById('speedStatusText');
+
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    pingEl.textContent = '—'; dlEl.textContent = '—'; ulEl.textContent = '—';
+    setArc('pingArc','pingNeedle',0,300);
+    setArc('dlArc','dlNeedle',0,200);
+    setArc('ulArc','ulNeedle',0,100);
+    progWrap.style.display = 'block';
+
+    function setProgress(pct, label) {
+      progBar.style.width = pct + '%';
+      progPct.textContent = pct + '%';
+      statusTx.textContent = label;
+    }
+
+    // ── PING ────────────────────────────────────────────────────────────────
+    setProgress(5, 'Measuring ping…');
+    try {
+      const pings = [];
+      for (let i = 0; i < 5; i++) {
+        const t0 = performance.now();
+        await fetch('https://www.cloudflare.com/cdn-cgi/trace?' + Math.random(), { cache: 'no-store', mode: 'no-cors' });
+        pings.push(performance.now() - t0);
+      }
+      pings.sort((a,b)=>a-b);
+      const median = pings[Math.floor(pings.length/2)];
+      const ms = Math.round(median);
+      pingEl.textContent = ms;
+      pingEl.style.color = ms < 80 ? 'var(--success)' : ms < 200 ? 'var(--warn)' : 'var(--danger)';
+      setPingArc(ms);
+    } catch(e) { pingEl.textContent = 'N/A'; }
+    setProgress(20, 'Ping done — starting download…');
+
+    // ── DOWNLOAD ─────────────────────────────────────────────────────────────
+    setProgress(25, 'Testing download speed…');
+    let dlMbps = 0;
+    try {
+      const dlUrl = 'https://speed.cloudflare.com/__down?bytes=40000000&_=' + Date.now();
+      const t0 = performance.now();
+      const resp = await fetch(dlUrl, { cache: 'no-store' });
+      const reader = resp.body.getReader();
+      let received = 0;
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        received += value.length;
+        const elapsed = (performance.now() - t0) / 1000;
+        const mbps = (received * 8) / (elapsed * 1e6);
+        dlEl.textContent = mbps.toFixed(1);
+        setDlArc(mbps);
+        const pct = Math.min(25 + Math.round((received / 20000000) * 45), 70);
+        setProgress(pct, 'Downloading… ' + mbps.toFixed(1) + ' Mbps');
+      }
+      const elapsed = (performance.now() - t0) / 1000;
+      dlMbps = (received * 8) / (elapsed * 1e6);
+      dlEl.textContent = dlMbps.toFixed(1);
+      setDlArc(dlMbps);
+    } catch(e) { dlEl.textContent = 'N/A'; }
+    setProgress(72, 'Download done — starting upload…');
+
+    // ── UPLOAD ───────────────────────────────────────────────────────────────
+    let ulMbps = 0;
+    try {
+      const uploadSize = 5 * 1024 * 1024; // 5 MB
+      const blob = new Uint8Array(uploadSize).fill(65);
+      const t0 = performance.now();
+      await fetch('https://speed.cloudflare.com/__up', {
+        method: 'POST',
+        body: blob,
+        headers: { 'Content-Type': 'application/octet-stream' },
+        cache: 'no-store'
+      });
+      const elapsed = (performance.now() - t0) / 1000;
+      ulMbps = (uploadSize * 8) / (elapsed * 1e6);
+      ulEl.textContent = ulMbps.toFixed(1);
+      setUlArc(ulMbps);
+      setProgress(95, 'Upload done…');
+    } catch(e) {
+      if (dlMbps > 0) {
+        ulMbps = dlMbps * 0.5;
+        ulEl.textContent = ulMbps.toFixed(1);
+        setUlArc(ulMbps);
+      } else { ulEl.textContent = 'N/A'; }
+      setProgress(95, 'Upload done…');
+    }
+
+    setProgress(100, 'Speed test complete ✓');
+    setTimeout(() => { progWrap.style.display = 'none'; }, 2000);
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    btnText.textContent = 'Run Again';
+  }
+  </script>
+
+  <script>
+  // ─── CYBER PATTERN ANIMATION ─────────────────────────────────────────────
+  (function() {
+    const canvas = document.getElementById('cyberCanvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, nodes = [], particles = [], hexagons = [];
+    const ACCENT  = 'rgba(0,212,255,';
+    const ACCENT2 = 'rgba(26,111,255,';
+    const ACCENT3 = 'rgba(0,240,255,';
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function initNodes() {
+      nodes = [];
+      const gx = 60, gy = 60;
+      for (let x = 0; x < W + gx; x += gx) {
+        for (let y = 0; y < H + gy; y += gy) {
+          nodes.push({ x, y, ox: x, oy: y, vx: (Math.random()-0.5)*0.3, vy: (Math.random()-0.5)*0.3, r: Math.random() * 1.5 + 0.5 });
+        }
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 40; i++) {
+        particles.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vy: -(Math.random() * 0.4 + 0.1),
+          vx: (Math.random()-0.5) * 0.15,
+          alpha: Math.random(),
+          size: Math.random() * 2 + 1,
+          color: [ACCENT, ACCENT2, ACCENT3][Math.floor(Math.random()*3)]
+        });
+      }
+    }
+
+    function initHexagons() {
+      hexagons = [];
+      for (let i = 0; i < 8; i++) {
+        hexagons.push({
+          x: Math.random() * W, y: Math.random() * H,
+          r: Math.random() * 20 + 12,
+          alpha: Math.random() * 0.3 + 0.1,
+          vx: (Math.random()-0.5)*0.2, vy: (Math.random()-0.5)*0.2,
+          pulse: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    function drawHex(x, y, r, alpha) {
+      ctx.beginPath();
+      for (let i = 0; i < 6; i++) {
+        const a = Math.PI / 180 * (60 * i - 30);
+        i === 0 ? ctx.moveTo(x + r * Math.cos(a), y + r * Math.sin(a))
+                : ctx.lineTo(x + r * Math.cos(a), y + r * Math.sin(a));
+      }
+      ctx.closePath();
+      ctx.strokeStyle = ACCENT + alpha + ')';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+    }
+
+    let scanY = 0;
+    let mouse = { x: null, y: null };
+    window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+    function draw(ts) {
+      ctx.clearRect(0, 0, W, H);
+
+      nodes.forEach(n => {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (mouse.x !== null) {
+          const dx = mouse.x - n.x;
+          const dy = mouse.y - n.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            const force = (120 - dist) / 120;
+            n.x -= dx * force * 0.02;
+            n.y -= dy * force * 0.02;
+          }
+        }
+        if (n.x < n.ox - 8 || n.x > n.ox + 8) n.vx *= -1;
+        if (n.y < n.oy - 8 || n.y > n.oy + 8) n.vy *= -1;
+      });
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 85) {
+            const a = (1 - dist / 85) * 0.25;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = ACCENT + a + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      nodes.forEach(n => {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = ACCENT + '0.6)';
+        ctx.fill();
+      });
+
+      ctx.setLineDash([4, 8]);
+      for (let y = 0; y < H; y += 80) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y);
+        ctx.strokeStyle = ACCENT + '0.05)'; ctx.lineWidth = 1; ctx.stroke();
+      }
+      for (let x = 0; x < W; x += 80) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H);
+        ctx.strokeStyle = ACCENT2 + '0.04)'; ctx.lineWidth = 1; ctx.stroke();
+      }
+      ctx.setLineDash([]);
+
+      hexagons.forEach(h => {
+        h.x += h.vx; h.y += h.vy;
+        if (h.x < -h.r) h.x = W + h.r;
+        if (h.x > W + h.r) h.x = -h.r;
+        if (h.y < -h.r) h.y = H + h.r;
+        if (h.y > H + h.r) h.y = -h.r;
+        h.pulse += 0.02;
+        const pa = h.alpha * (0.5 + 0.5 * Math.sin(h.pulse));
+        drawHex(h.x, h.y, h.r, pa);
+        drawHex(h.x, h.y, h.r * 0.6, pa * 0.5);
+      });
+
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        p.alpha -= 0.003;
+        if (p.alpha <= 0 || p.y < -10) {
+          p.y = H + 10; p.x = Math.random() * W; p.alpha = Math.random() * 0.5 + 0.3;
+        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + p.alpha + ')';
+        ctx.fill();
+      });
+
+      scanY = (scanY + 0.5) % H;
+      const scanGrad = ctx.createLinearGradient(0, scanY - 40, 0, scanY + 40);
+      scanGrad.addColorStop(0, ACCENT + '0)');
+      scanGrad.addColorStop(0.5, ACCENT + '0.06)');
+      scanGrad.addColorStop(1, ACCENT + '0)');
+      ctx.fillStyle = scanGrad;
+      ctx.fillRect(0, scanY - 40, W, 80);
+
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    initNodes();
+    initParticles();
+    initHexagons();
+    requestAnimationFrame(draw);
+    window.addEventListener('resize', () => { resize(); initNodes(); initParticles(); initHexagons(); });
+  })();
+  </script>
+
+</body>
+</html>
