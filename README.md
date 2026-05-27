@@ -20,14 +20,6 @@ A beautiful, modern cyber-style subscription page for **Marzban Panel**.
 
 ---
 
-## 📸 Screenshots
-
-![Subscription Page Preview](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/screenshots/preview.jpg)
-
-*(More screenshots will be added below)*
-
----
-
 ## 🛠 Installation
 
 Run the following commands on your Server:
@@ -43,3 +35,11 @@ echo 'SUBSCRIPTION_PAGE_TEMPLATE="subscription/index.html"' | sudo tee -a /opt/m
 
 # 3. Restart Marzban
 sudo marzban restart
+```
+## 📸 Screenshots
+
+![Subscription Page Preview]([https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/screenshots/preview.jpg](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/Files/Screenshot%201.png))
+![Subscription Speedtest]([https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/screenshots/preview.jpg](https://github.com/TharuPinsara/tharu-marzban-sub/blob/main/Files/Screenshot%202.png))
+
+
+---
