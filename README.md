@@ -1,6 +1,6 @@
 # Custom Marzban Subscription Page
 
-![Custom Sub](https://img.shields.io/badge/Tharu%20Paid%20Servers-%2300d4ff?style=for-the-badge&logo=shield)
+![Custom Sub](https://img.shields.io/badge/Custom%20Sub%20Servers-%2300d4ff?style=for-the-badge&logo=shield)
 ![Marzban](https://img.shields.io/badge/Marzban-Subscription%20Template-1a6fff?style=for-the-badge)
 
 A beautiful, modern cyber-style subscription page for **Marzban Panel**.
